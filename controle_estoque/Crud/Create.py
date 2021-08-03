@@ -86,5 +86,5 @@ class CreateDb(object):
             sessao.commit()
 
         except Exception as e:
-            print("ERRO: "+e)
+            print("ERRO: ")
             pass

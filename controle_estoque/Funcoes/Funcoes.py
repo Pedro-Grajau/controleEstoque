@@ -7,10 +7,8 @@ from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QPixmap, QIcon
 
-
-from pycep_correios import consultar_cep
-from pycep_correios.excecoes import ExcecaoPyCEPCorreios
-
+from pycep_correios import get_address_from_cep
+#from pycep_correios.excecoes import ExcecaoPyCEPCorreios
 
 class Funcao(object):
 
@@ -100,7 +98,7 @@ class Funcao(object):
         cep = self.tx_Cep.text()
 
         try:
-            busca = consultar_cep(cep)
+            busca = get_address_from_cep(cep)
             self.tx_Endereco.setText(busca['end'])
             self.tx_Bairro.setText(busca['bairro'])
             self.tx_Cidade.setText(busca['cidade'])
